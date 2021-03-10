@@ -1,4 +1,3 @@
-"diagnostic.enableSign": false,
 
 "NERDTree
 "map <leader>m :NERDTreeToggle<CR>

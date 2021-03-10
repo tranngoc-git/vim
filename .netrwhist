@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/tdn/.config/nvim'
+let g:netrw_dirhist_5='/etc/apache2'
+let g:netrw_dirhist_4='/etc'
+let g:netrw_dirhist_3='/home/tdn/Desktop/Blog/comments'
+let g:netrw_dirhist_2='/home/tdn/.config/Code'
+let g:netrw_dirhist_1='/var/www/test/index.html'
+let g:netrw_dirhist_0='/home/tdn/nodejs'
+let g:netrw_dirhist_9='/var'
+let g:netrw_dirhist_8='/home/tdn/.vscode/extensions/dsznajder.es7-react-js-snippets-3.0.0'
+let g:netrw_dirhist_7='/usr/share/code/resources/app/extensions/theme-defaults'
