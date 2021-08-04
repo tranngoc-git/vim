@@ -51,8 +51,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Indent guidelines
   "Plug 'Yggdroot/indentLine'
   
-  " Vim devicons
-  "Plug 'ryanoasis/vim-devicons'
+  " Vim surrounding
+  Plug 'tpope/vim-surround'
   
   " Tag bar
   Plug 'preservim/tagbar'  
