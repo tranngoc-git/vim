@@ -1,0 +1,47 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python",
+    "go"
+  ],
+
+  // python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
+
+  // explorer
+
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.file.root.template": " ~/ [title] [root] [fullpath]",
+  "explorer.buffer.root.template": " ~/ [title]",
+  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit",
+    "df": "delete"
+  },
+  "explorer.icon.customIcons": {
+    "icons": {
+      "folderClosed": {
+        "code": "",
+        "color": "#e0e0e0"
+      },
+      "folderOpened": {
+        "code": "",
+        "color": "#e0e0e0"
+      }
+    }
+  },
+  "coc.preferences.extensionUpdateCheck": "daily"
+}
