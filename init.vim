@@ -18,13 +18,15 @@ source $HOME/.config/nvim/themes/onedark.vim
 "for config in split(glob('$HOME/.config/nvim/configs/*.vim'), '\n')
 "  exec "source" config
 "endfor
-source $HOME/.config/nvim/configs/airline.vim
-source $HOME/.config/nvim/configs/coc.vim
+"source $HOME/.config/nvim/configs/airline.vim
+"source $HOME/.config/nvim/configs/coc.vim
 source $HOME/.config/nvim/configs/easymotion.vim
 source $HOME/.config/nvim/configs/fzf.vim
 source $HOME/.config/nvim/configs/general.vim
 source $HOME/.config/nvim/configs/go.vim
 source $HOME/.config/nvim/configs/keys.vim
+source $HOME/.config/nvim/configs/lsp.vim
+source $HOME/.config/nvim/configs/nvim-tree.vim
 source $HOME/.config/nvim/configs/floaterm.vim
 source $HOME/.config/nvim/configs/signify.vim
 source $HOME/.config/nvim/configs/tagbar.vim

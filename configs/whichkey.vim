@@ -29,8 +29,8 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 "let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
 "let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
 "let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
-let g:which_key_map['p'] = [ ':Buffers'                    , 'buffers' ]
-"let g:which_key_map['t'] = [ ':FloatermToggle'             , 'terminal' ]
+let g:which_key_map['p'] = [ ':Buffers'                    , 'Buffers' ]
+let g:which_key_map['f'] = [ ':Files'             , 'Files' ]
 "let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
 
 " s is for search

@@ -34,5 +34,3 @@ noremap <C-l> <C-w>l
 "nnoremap <Leader>o o<Esc>^Da
 "nnoremap <Leader>O O<Esc>^Da
 
-" FZF
-nnoremap f :Files<CR>

@@ -30,6 +30,8 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set autowrite
 set updatetime=100                      " Faster completion
 set textwidth=80
+
+
 "set colorcolumn=81
 "set numberwidth=
 
@@ -45,3 +47,10 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 " You can't stop me
 cmap w!! w !sudo tee %
 "set -sg escape-time 0
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+

@@ -13,24 +13,29 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " GENERAL PLUGINS
   " Better Syntax Support
   Plug 'sheerun/vim-polyglot'
+  
+  " Tree
+  Plug 'kyazdani42/nvim-web-devicons' " for file icons
+  Plug 'kyazdani42/nvim-tree.lua' 
 
   " Auto pairs for '(' '[' '{'
   Plug 'jiangmiao/auto-pairs'
 
   " Theme
-  Plug 'joshdick/onedark.vim'
+  "Plug 'joshdick/onedark.vim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
   "Plug 'morhetz/gruvbox'
+  Plug 'ChristianChiarulli/nvcode-color-schemes.vim' 
 
-  " Intellisense with coc
-  " Stable version of coc
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Intellisense with lsp
+  Plug 'neovim/nvim-lspconfig' 
+  Plug 'hrsh7th/nvim-compe'
+  "Plug 'codota/tabnine-vim'
 
-  " Keeping up to date with master
-  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
   " Plugin Airline and Airline themes
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  "Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
   " Comment
   Plug 'tpope/vim-commentary'
@@ -56,9 +61,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   
   " Tag bar
   Plug 'preservim/tagbar'  
+  Plug 'liuchengxu/vista.vim'
  
   " GIT PLUGINS
-  Plug 'mhinz/vim-signify'
+  "Plug 'nvim-lua/plenary.nvim'
+  "Plug 'lewis6991/gitsigns.nvim'
+  "Plug 'mhinz/vim-signify'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
   Plug 'junegunn/gv.vim'
