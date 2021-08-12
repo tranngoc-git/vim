@@ -1,5 +1,4 @@
 lua << EOF
-require'lspconfig'.pyright.setup{}
 require'lspconfig'.gopls.setup{}
 
 require'lspinstall'.setup() -- important
@@ -62,6 +61,7 @@ _G.s_tab_complete = function()
   end
 end
 
+vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm({ 'keys': '<CR>', 'select': v:true })", { expr = true })
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
@@ -71,48 +71,50 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', { expr = true })
 vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
 
-require('gitsigns').setup {
-  signs = {
-    add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-    change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-  },
-  numhl = false,
-  linehl = false,
-  keymaps = {
-    -- Default keymap options
-    noremap = true,
+-- Set up waring
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  function(_, _, params, client_id, _)
+    local config = { -- your config
+      underline = false,
+      virtual_text = {
+        prefix = "",
+        spacing = 1,
+      },
+      signs = true,
+      update_in_insert = false,
+    }
+    local uri = params.uri
+    local bufnr = vim.uri_to_bufnr(uri)
 
-    ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
-    ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+    if not bufnr then
+      return
+    end
 
-    ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-    ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-    ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-    ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-    ['v <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-    ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
-    ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-    ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
+    local diagnostics = params.diagnostics
 
-    -- Text objects
-    ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
-    ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
-  },
-  watch_index = {
-    interval = 1000,
-    follow_files = true
-  },
-  current_line_blame = false,
-  current_line_blame_delay = 1000,
-  current_line_blame_position = 'eol',
-  sign_priority = 6,
-  update_debounce = 100,
-  status_formatter = nil, -- Use default
-  word_diff = false,
-  use_internal_diff = true,  -- If luajit is present
-}
+    for i, v in ipairs(diagnostics) do
+      diagnostics[i].message = string.format("%s: %s", v.source, v.message)
+    end
+
+    vim.lsp.diagnostic.save(diagnostics, bufnr, client_id)
+
+    if not vim.api.nvim_buf_is_loaded(bufnr) then
+      return
+    end
+
+    vim.lsp.diagnostic.display(diagnostics, bufnr, client_id, config)
+  end
+
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+
+for type, icon in pairs(signs) do
+  local hl = "LspDiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+--Show line diagnostics automatically in hover window
+
+--vim.o.updatetime = 250
+--vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})]]
 
 EOF

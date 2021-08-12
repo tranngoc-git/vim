@@ -21,7 +21,7 @@ set smarttab                            " Makes tabbing smarter will realize you
 set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
-set laststatus=0                        " Always display the status line
+set laststatus=1                        " Always display the status line
 set number                              " Line numbers
 set relativenumber
 set cursorline                          " Enable highlighting of the current line
@@ -30,6 +30,7 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set autowrite
 set updatetime=100                      " Faster completion
 set textwidth=80
+set signcolumn=number
 
 
 "set colorcolumn=81

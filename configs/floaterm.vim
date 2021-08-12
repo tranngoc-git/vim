@@ -1,16 +1,24 @@
-"Float term 
-let g:floaterm_keymap_toggle='<C-p>'
-inoremap <silent> <C-p> <C-o>:FloatermToggle<CR>
+lua << EOF
 
-" Floaterm
-let g:floaterm_gitcommit='floaterm'
-"let g:floaterm_title='Terminal'
-let g:floaterm_autoinsert=1
-let g:floaterm_width=0.9
-let g:floaterm_height=0.9
-"let g:floaterm_position='bottomright'
-let g:floaterm_wintitle=0
-let g:floaterm_autoclose=1
+require("toggleterm").setup{
+   shade_terminals = false,
+   highlights = {
+      border = "Normal",
+      background = "Normal",
+   }
+}
 
-hi Floaterm guibg=none
-hi FloatermBorder guibg=none guifg=none
+EOF
+
+" set
+let g:toggleterm_terminal_mapping = '<C-k>'
+" or manually...
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-k> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+" By applying the mappings this way you can pass a count to your
+" mapping to open a specific window.
+" For example: 2<C-t> will open terminal 2
+nnoremap <silent><c-k> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+inoremap <silent><c-k> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+

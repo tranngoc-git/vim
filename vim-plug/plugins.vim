@@ -12,7 +12,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
   " GENERAL PLUGINS
   " Better Syntax Support
-  Plug 'sheerun/vim-polyglot'
+  "Plug 'sheerun/vim-polyglot'
   
   " Tree
   Plug 'kyazdani42/nvim-web-devicons' " for file icons
@@ -24,8 +24,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Theme
   "Plug 'joshdick/onedark.vim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-
-  "Plug 'morhetz/gruvbox'
   Plug 'ChristianChiarulli/nvcode-color-schemes.vim' 
 
   "Intellisense with lsp
@@ -35,27 +33,25 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
   " Plugin Airline and Airline themes
-  "Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-
+  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+  Plug 'romgrk/barbar.nvim' 
+  
   " Comment
   Plug 'tpope/vim-commentary'
 
   " Fzf
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'airblade/vim-rooter'
+  "Plug 'airblade/vim-rooter'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 
   " Easymotion
   Plug 'easymotion/vim-easymotion'
 
   " Floaterm
-  Plug 'voldikss/vim-floaterm'
+  Plug 'akinsho/nvim-toggleterm.lua'
 
   " Which key
-  Plug 'liuchengxu/vim-which-key'
-  " Indent guidelines
-  "Plug 'Yggdroot/indentLine'
-  
+
   " Vim surrounding
   Plug 'tpope/vim-surround'
   
@@ -63,7 +59,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'preservim/tagbar'  
   Plug 'liuchengxu/vista.vim'
  
-  " GIT PLUGINS
+  "" GIT PLUGINS
   "Plug 'nvim-lua/plenary.nvim'
   "Plug 'lewis6991/gitsigns.nvim'
   "Plug 'mhinz/vim-signify'

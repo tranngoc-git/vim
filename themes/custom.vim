@@ -1,7 +1,7 @@
 syntax enable
 
 highlight function ctermfg=36
-highlight Normal ctermfg=250
+hi Normal guibg=NONE ctermbg=NONE
 
 " Go  highlight
 let g:go_highlight_types = 1
