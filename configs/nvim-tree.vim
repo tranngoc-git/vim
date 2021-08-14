@@ -11,13 +11,14 @@ let g:nvim_tree_icons = {
     \   'symlink': "",
     \   'symlink_open': "",
     \   },
-    \   'lsp': {
+    \  'lsp': {
     \     'hint': "",
     \     'info': " ",
     \     'warning': "",
     \     'error': "",
-    \   }
+    \   },
     \ }
+
 
 let g:nvim_tree_lsp_diagnostics = 1
 let g:nvim_tree_follow = 1

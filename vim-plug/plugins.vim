@@ -39,6 +39,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Comment
   Plug 'tpope/vim-commentary'
 
+  " Which key
+  "Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+
   " Fzf
   "Plug 'airblade/vim-rooter'
   Plug 'nvim-lua/plenary.nvim'
@@ -54,7 +57,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " Vim surrounding
   Plug 'tpope/vim-surround'
-  
+
   " Tag bar
   Plug 'preservim/tagbar'  
   Plug 'liuchengxu/vista.vim'

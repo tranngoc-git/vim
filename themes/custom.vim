@@ -1,7 +1,5 @@
-syntax enable
-
-highlight function ctermfg=36
 hi Normal guibg=NONE ctermbg=NONE
+hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=Grey23 guifg=NONE
 
 " Go  highlight
 let g:go_highlight_types = 1

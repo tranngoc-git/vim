@@ -14,7 +14,7 @@ set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
-set conceallevel=0                      " So that I can see `` in markdown files
+set conceallevel=1                      " So that I can see `` in markdown files
 set tabstop=2                           " Insert 2 spaces for a tab
 set shiftwidth=2                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
@@ -31,6 +31,8 @@ set autowrite
 set updatetime=100                      " Faster completion
 set textwidth=80
 set signcolumn=number
+set listchars=tab:\|\                   " Set tab
+set list
 
 
 "set colorcolumn=81
