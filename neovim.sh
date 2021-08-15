@@ -4,3 +4,4 @@ cd ~/.config
 mkdir nvim
 git clone --branch neovim https://github.com/tranngoc-git/vim.git nvim
 
+echo 'alias vi="nvim"' >> ~/.zshrc
