@@ -64,8 +64,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'liuchengxu/vista.vim'
  
   "" GIT PLUGINS
-  "Plug 'nvim-lua/plenary.nvim'
-  "Plug 'lewis6991/gitsigns.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'lewis6991/gitsigns.nvim'
   "Plug 'mhinz/vim-signify'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
