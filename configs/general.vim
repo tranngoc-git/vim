@@ -43,6 +43,7 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set timeoutlen=0                     " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
+set completeopt=menuone,noselect
 "set autochdir                           " Your working directory will always be the same as your working directory
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

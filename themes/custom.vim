@@ -1,5 +1,5 @@
 hi Normal guibg=NONE ctermbg=NONE
-hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=Grey23 guifg=NONE
+"hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=Grey23 guifg=NONE
 
 " Go  highlight
 let g:go_highlight_types = 1
