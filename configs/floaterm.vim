@@ -1,11 +1,12 @@
 lua << EOF
 
 require("toggleterm").setup{
-   shade_terminals = false,
-   highlights = {
-      border = "Normal",
-      background = "Normal",
-   }
+  size = 18, 
+  shade_terminals = false,
+  highlights = {
+     border = "Normal",
+     background = "Normal",
+  }
 }
 
 EOF
