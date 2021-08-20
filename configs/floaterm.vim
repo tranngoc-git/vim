@@ -3,6 +3,7 @@ lua << EOF
 require("toggleterm").setup{
   size = 18, 
   shade_terminals = false,
+  direction = 'horizontal',
   highlights = {
      border = "Normal",
      background = "Normal",

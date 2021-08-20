@@ -967,10 +967,10 @@ local icons = {
     color = "#e4b854",
     name = "Prolog"
   };
-  ["mod"] = {
+  ["go.mod"] = {
     icon = "",
     color = "#e57373",
-    name = "Gomod",
+    name = "gomod",
   };
 }
 
